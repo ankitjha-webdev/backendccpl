@@ -27,9 +27,8 @@ const sequelizeValidationErrorHandler = (error) => {
 const sequelizeDatabaseErrorHandler = (error) => {
   const errorCode = error.parent.code;
   let msg;
-  if (errorCode === "ER_DATA_TOO_LONG") {
-    msg = `Your Input is too long!!`;
-  }
+  if (errorCode === "ER_DATA_TOO_LONG")  msg = `Your Input is too long!!`;
+  if (errorCode === "ER_BAD_FIELD_ERROR")  msg = `Something has Unknown!!`;
   return new CustomError(msg, 400);
 };
 

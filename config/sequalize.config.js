@@ -44,6 +44,6 @@ db.career = require('../models/career.models')(sequelize, DataTypes);
 
 module.exports = db;
 
-db.sequelize.sync({ force: false  }).then(() => {
+db.sequelize.sync({ force: true  }).then(() => {
   console.log("#droped the database and and re-synced.");
 });

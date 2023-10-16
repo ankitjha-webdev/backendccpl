@@ -99,8 +99,8 @@ Team Cable Care
     attachments: attachments
   };
 
-  const senderSent =await sendMail(senderEmailOptions);
-  const reciverSnet =await sendMail(receiverEmailOptions);
+  const senderSent = await sendMail(senderEmailOptions);
+  const reciverSnet = await sendMail(receiverEmailOptions);
 
   res.status(201).json({
     status: 201,
