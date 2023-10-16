@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const CustomError = require('./utils/CustomError');
 const globalErrorHandler = require('./controllers/error.controllers')
+const cors = require('cors');
 
 let app = express();
 
@@ -10,6 +11,7 @@ app.use(express.json());
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
+app.use(cors());
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
 
