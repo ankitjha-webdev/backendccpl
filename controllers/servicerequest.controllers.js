@@ -70,7 +70,9 @@ Team Cable Care
         const providerEmailBody = provicerEmailTemplate
             .replace("[TICKETNUMBER]", data.ticket_number)
             .replace("[PSERVICE]", data.subject)
-            .replace("[PFULLNAME]", data.full_name)
+            .replace("[PFULLNAME1]", data.full_name)
+            .replace("[PFULLNAME2]", data.full_name)
+            .replace("[PFULLNAME3]", data.full_name)
             .replace("[PEMAIL]", data.email)
             .replace("[PCOMPANY]", data.company)
             .replace("[PTICKETNUMBER]", data.ticket_number)

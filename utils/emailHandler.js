@@ -36,7 +36,10 @@ module.exports =  async (options) =>{
                 to: options.to, // list of receivers
                 subject: options.subject, // Subject line
                 text: options.text, // plain text body
-                html: options.html, // html body
+                html: options.html, // html body,
+            }
+            if (options.attachments) {
+                emailOptions.attachments = [{'filename': options.attachments.filename, 'content': options.attachments.file}]
             }
         } else {
             emailOptions = {

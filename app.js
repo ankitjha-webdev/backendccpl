@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === "development") {
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
 
-app.use("/resumes",express.static("./public/uploads/resumes"));
+// app.use("/resumes",express.static("./public/uploads/resumes"));
 
 // Routes
 app.use("/api/v1/servicerequest", require("./routes/servicerequest.routes"));
