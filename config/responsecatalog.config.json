@@ -1,0 +1,10 @@
+{
+	"common_success": "Success",
+	"common_failed": "Something went wrong, please contact the admin",
+	"common_save": "Saved Successfully",
+	"common_delete": "Deleted Successfully",
+	"common_update": "Updated Successfully",
+	"updation_failed":"Failed to update",
+	"save_failed": "Could not save, please try again later",
+	"required_data_missing":"Required data missing"
+}

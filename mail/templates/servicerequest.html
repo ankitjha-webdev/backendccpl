@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Cable Care</title>
+    <style type="text/css">
+        /* Client-specific Styles */
+        #outlook a {
+            padding: 0;
+        }
+
+        /* Force Outlook to provide a "view in browser" menu link. */
+        body {
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #d8d8d8;
+        }
+
+        /* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design. */
+        .ExternalClass {
+            width: 100%;
+        }
+
+        /* Force Hotmail to display emails at full width */
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+            line-height: 100%;
+        }
+
+        /* Force Hotmail to display normal line spacing. */
+        #backgroundTable {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            line-height: 100% !important;
+        }
+
+        img {
+            outline: none;
+            text-decoration: none;
+            border: none;
+            -ms-interpolation-mode: bicubic;
+        }
+
+        a img {
+            border: none;
+        }
+
+        .image_fix {
+            display: block;
+        }
+
+        p {
+            margin: 0px 0px !important;
+        }
+
+        table td {
+            border-collapse: collapse;
+        }
+
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        a {
+            color: #29496a;
+            text-decoration: none;
+            text-decoration: none !important;
+        }
+
+        /*STYLES*/
+        table[class=full] {
+            width: 100%;
+            clear: both;
+        }
+
+        /*IPAD STYLES*/
+        @media only screen and (max-width: 640px) {
+
+            a[href^="tel"],
+            a[href^="sms"] {
+                text-decoration: none;
+                color: #29496a;
+                /* or whatever your want */
+                pointer-events: none;
+                cursor: default;
+            }
+
+            .mobile_link a[href^="tel"],
+            .mobile_link a[href^="sms"] {
+                text-decoration: default;
+                color: #29496a !important;
+                pointer-events: auto;
+                cursor: default;
+            }
+
+            table[class=devicewidth] {
+                width: 440px !important;
+                text-align: center !important;
+            }
+
+            table[class=devicewidthmob] {
+                width: 420px !important;
+                text-align: center !important;
+            }
+
+            table[class=devicewidthinner] {
+                width: 420px !important;
+                text-align: center !important;
+            }
+
+            img[class=banner] {
+                width: 440px !important;
+                height: 157px !important;
+            }
+
+            img[class=col2img] {
+                width: 440px !important;
+                height: 330px !important;
+            }
+
+            table[class="cols3inner"] {
+                width: 100px !important;
+            }
+
+            table[class="col3img"] {
+                width: 131px !important;
+            }
+
+            img[class="col3img"] {
+                width: 131px !important;
+                height: 82px !important;
+            }
+
+            table[class='removeMobile'] {
+                width: 10px !important;
+            }
+
+            img[class="blog"] {
+                width: 420px !important;
+                height: 162px !important;
+            }
+        }
+
+        /*IPHONE STYLES*/
+        @media only screen and (max-width: 480px) {
+
+            a[href^="tel"],
+            a[href^="sms"] {
+                text-decoration: none;
+                color: #29496a;
+                /* or whatever your want */
+                pointer-events: none;
+                cursor: default;
+            }
+
+            .mobile_link a[href^="tel"],
+            .mobile_link a[href^="sms"] {
+                text-decoration: default;
+                color: #29496a !important;
+                pointer-events: auto;
+                cursor: default;
+            }
+
+            table[class=devicewidth] {
+                width: 280px !important;
+                text-align: center !important;
+            }
+
+            table[class=devicewidthmob] {
+                width: 260px !important;
+                text-align: center !important;
+            }
+
+            table[class=devicewidthinner] {
+                width: 260px !important;
+                text-align: center !important;
+            }
+
+            img[class=banner] {
+                width: 280px !important;
+                height: 100px !important;
+            }
+
+            img[class=col2img] {
+                width: 280px !important;
+                height: 210px !important;
+            }
+
+            table[class="cols3inner"] {
+                width: 260px !important;
+            }
+
+            img[class="col3img"] {
+                width: 280px !important;
+                height: 175px !important;
+            }
+
+            table[class="col3img"] {
+                width: 280px !important;
+            }
+
+            img[class="blog"] {
+                width: 260px !important;
+                height: 100px !important;
+            }
+
+            td[class="padding-top-right15"] {
+                padding: 15px 15px 0 0 !important;
+            }
+
+            td[class="padding-right15"] {
+                padding-right: 15px !important;
+            }
+        }
+
+        @media print {
+            td.bgcolorshow {
+                background-color: #29496a !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+
+        @media print {
+            .vendorListHeading th {
+                color: white !important;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .darkmode {
+                background-color: #ffffff !important;
+            }
+
+            .darkcolorsec {
+                color: #000000 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Start of preheader -->
+    <table width="100%" bgcolor="#d8d8d8" cellpadding="0" cellspacing="0" border="0" id="backgroundTable"
+        st-sortable="preheader">
+        <tbody>
+            <tr>
+                <td>
+                    <table width="560" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+                        <tbody>
+                            <tr>
+                                <td width="100%">
+                                    <table width="560" cellpadding="0" cellspacing="0" border="0" align="center"
+                                        class="devicewidth">
+                                        <tbody>
+                                            <!-- Spacing -->
+                                            <tr>
+                                                <td width="100%" height="10"></td>
+                                            </tr>
+                                            <!-- Spacing -->
+                                            <tr>
+                                                <td align="center" valign="middle"
+                                                    style="font-family: Helvetica, arial, sans-serif; font-size: 10px;color: #303030;text-align:center;"
+                                                    st-content="viewonline">&nbsp;</td>
+                                                <!-- Spacing -->
+                                            </tr>
+                                            <tr>
+                                                <td width="100%" height="10"></td>
+                                            </tr>
+                                            <!-- Spacing -->
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- End of preheader -->
+    <!-- Start of header -->
+    <table width="100%" bgcolor="#d8d8d8" cellpadding="0" cellspacing="0" border="0" id="backgroundTable"
+        st-sortable="header">
+        <tbody>
+            <tr>
+                <td>
+                    <table width="560" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+                        <tbody>
+                            <tr>
+                                <td width="100%">
+                                    <table bgcolor="#FFF" width="560" cellpadding="0" cellspacing="0" border="0"
+                                        align="center" style="border-top-left-radius:5px;border-top-right-radius:5px;"
+                                        class="devicewidth darkmode">
+                                        <tbody>
+                                            <!-- Spacing -->
+                                            <tr>
+                                                <td height="10"
+                                                    style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">
+                                                    &nbsp;</td>
+                                            </tr>
+                                            <!-- Spacing -->
+                                            <tr>
+                                                <td>
+                                                    <!-- logo -->
+                                                    <table width="560" align="left" border="0" cellpadding="0"
+                                                        cellspacing="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td width="20"></td>
+                                                                <td width="520" height="60" align="left">
+                                                                    <div class="imgpop">
+                                                                        <a target="_blank" href="#">
+                                                                            <img src="https://cablecare.co/images/cablecarelogo.png"
+                                                                                alt="" border="0" width="100"
+                                                                                height="52"
+                                                                                style="display:block; border:none; outline:none; text-decoration:none;">
+                                                                        </a>
+                                                                    </div>
+                                                                </td>
+                                                                <td width="20"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <!-- end of logo -->
+                                                </td>
+                                            </tr>
+                                            <!-- Spacing -->
+                                            <tr>
+                                                <td height="10"
+                                                    style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">
+                                                    &nbsp;</td>
+                                            </tr>
+                                            <!-- Spacing -->
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- End of Header -->
+    <!--content_section_div-->
+    <table width="100%" bgcolor="#d8d8d8" cellpadding="0" cellspacing="0" border="0" id="backgroundTable"
+        st-sortable="banner">
+        <tbody>
+            <tr>
+                <td>
+                    <table width="560" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+                        <tbody>
+                            <tr>
+                                <td width="100%">
+                                    <table width="560" align="center" cellspacing="0" cellpadding="0" border="0"
+                                        class="devicewidth">
+                                        <tbody>
+                                            <tr>
+                                                <!-- start of image -->
+                                                <td align="center" st-image="banner-image" bgcolor="#eee">
+                                                    <table class="full" align="left" width="560" cellpadding="0"
+                                                        cellspacing="0" border="0"
+                                                        style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td width="100%" height="30">&nbsp; </td>
+                                                            </tr>
+                                                            <!-- START OF TEXT-->
+                                                            <tr>
+                                                                <td class="center padding-top-right15"
+                                                                    style="font-family: Helvetica, arial, sans-serif; padding:0 30px 10px 30px; font-size: 20px; color: #2d2424; text-align:left; line-height: 24px; font-weight:bold;">
+                                                                    Hello [XYZ],
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td
+                                                                    style="margin: 0; padding:10px 30px 10px 30px; margin:0; font-size:17px ; color:#2d2424; font-family: Helvetica, Arial, sans-serif; line-height: 20px;mso-line-height-rule: exactly; text-align:left; line-height: 1.3rem;">
+                                                                    Thank you for your service request with Ticket
+                                                                    <b>#[TICKETNUMBER]</b>. We want to assure you that we've
+                                                                    initiated the process to address your request
+                                                                    promptly. Our dedicated team is working diligently
+                                                                    to resolve your issue, and we'll keep you informed
+                                                                    of the progress. </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <!-- <td width="100%" height="25"></td> -->
+                                                            </tr>
+                                                            <tr>
+                                                                <td width="100%" height="25"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td
+                                                                    style="margin: 0; padding:10px 30px 10px 30px; margin:0; font-size:17px ; color:#2d2424; font-family: Helvetica, Arial, sans-serif; line-height: 20px;mso-line-height-rule: exactly; text-align:left; line-height: 1.3rem;">
+                                                                    If you have any additional information or questions,
+                                                                    please don't hesitate to reach out. Your
+                                                                    satisfaction is our priority, and we appreciate your
+                                                                    trust in our services. Expect further updates soon.
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td
+                                                                    style="margin: 0; padding:10px 30px 10px 30px; margin:0; font-size:17px ; color:#2d2424; font-family: Helvetica, Arial, sans-serif; line-height: 20px;mso-line-height-rule: exactly; text-align:left;">
+                                                                    Thank you,<br />
+                                                                    <span style="font-weight: 700;">Team Cable
+                                                                        Care</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td width="100%" height="20"></td>
+                                                            </tr>
+                                                            <!-- END OF TEXT-->
+                                                            <tr>
+                                                                <td bgcolor="#e5322e" style="padding: 20px 20px">
+                                                                    <table width="100%" border="0" cellspacing="0"
+                                                                        cellpadding="0">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td
+                                                                                    style="font-size: 14px; line-height: 18px; text-align: left; color: #ffffff; font-family: Montserrat, Arial,sans-serif">
+                                                                                    <strong>Follow Us:</strong>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td width="250" height="40" align="left"
+                                                                                    style="font-family: Helvetica, arial, sans-serif; font-size: 14px; color: #FFF; text-align:left; line-height: 24px;">
+                                                                                    <!-- start of social icons -->
+                                                                                    <table align="left" border="0"
+                                                                                        cellpadding="0" cellspacing="0">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td width="22"
+                                                                                                    height="22"
+                                                                                                    align="left">
+                                                                                                    <div class="imgpop">
+                                                                                                        <a target="_blank"
+                                                                                                            href="">
+                                                                                                            <img src="https://cablecare.co/images/twitter.png"
+                                                                                                                alt=""
+                                                                                                                border="0"
+                                                                                                                width="22"
+                                                                                                                height="22"
+                                                                                                                style="display:block; border:none; outline:none; text-decoration:none;">
+                                                                                                        </a>
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td align="left"
+                                                                                                    width="10"
+                                                                                                    style="font-size:1px; line-height:1px;">
+                                                                                                    &nbsp;</td>
+                                                                                                <td width="22"
+                                                                                                    height="22"
+                                                                                                    align="left">
+                                                                                                    <div class="imgpop">
+                                                                                                        <a target="_blank"
+                                                                                                            href="https://www.youtube.com/@CABLECARE">
+                                                                                                            <img src="https://cablecare.co/images/youtube.png"
+                                                                                                                alt=""
+                                                                                                                border="0"
+                                                                                                                width="22"
+                                                                                                                height="22"
+                                                                                                                style="display:block; border:none; outline:none; text-decoration:none;">
+                                                                                                        </a>
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td align="left"
+                                                                                                    width="10"
+                                                                                                    style="font-size:1px; line-height:1px;">
+                                                                                                    &nbsp;</td>
+                                                                                                <td width="22"
+                                                                                                    height="22"
+                                                                                                    align="right">
+                                                                                                    <div class="imgpop">
+                                                                                                        <a target="_blank"
+                                                                                                            href="">
+                                                                                                            <img src="https://cablecare.co/images/instagram.png"
+                                                                                                                alt=""
+                                                                                                                border="0"
+                                                                                                                width="22"
+                                                                                                                height="22"
+                                                                                                                style="display:block; border:none; outline:none; text-decoration:none;">
+                                                                                                        </a>
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td align="left"
+                                                                                                    width="10"
+                                                                                                    style="font-size:1px; line-height:1px;">
+                                                                                                    &nbsp;</td>
+                                                                                                <td width="22"
+                                                                                                    height="22"
+                                                                                                    align="right">
+                                                                                                    <div class="imgpop">
+                                                                                                        <a target="_blank"
+                                                                                                            href="">
+                                                                                                            <img src="https://cablecare.co/images/linkedin.png"
+                                                                                                                alt=""
+                                                                                                                border="0"
+                                                                                                                width="22"
+                                                                                                                height="22"
+                                                                                                                style="display:block; border:none; outline:none; text-decoration:none;">
+                                                                                                        </a>
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td align="left"
+                                                                                                    width="10"
+                                                                                                    style="font-size:1px; line-height:1px;">
+                                                                                                    &nbsp;</td>
+                                                                                                <td width="22"
+                                                                                                    height="22"
+                                                                                                    align="right">
+                                                                                                    <div class="imgpop">
+                                                                                                        <a target="_blank"
+                                                                                                            href="https://www.facebook.com/cablecareindia">
+                                                                                                            <img src="https://cablecare.co/images/facebook.png"
+                                                                                                                alt=""
+                                                                                                                border="0"
+                                                                                                                width="22"
+                                                                                                                height="22"
+                                                                                                                style="display:block; border:none; outline:none; text-decoration:none;">
+                                                                                                        </a>
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                    <!-- end of social icons -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td
+                                                                                    style="font-size: 14px; line-height: 18px; text-align: left; color: #ffffff; font-family: Montserrat, Arial,sans-serif;">
+                                                                                    Copyright © 2023 Cable Care Ltd. All
+                                                                                    Rights Reserved.
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!-- <tr>
+														<td style="font-size: 14px; line-height: 18px; text-align: left; color: #ffffff; font-family: Montserrat, Arial,sans-serif; padding-bottom:10px;">
+															<strong>Our Mailing Address</strong>
+														</td>
+													</tr>
+													<tr>
+                                          <td style="font-size: 14px; line-height: 18px; text-align: left; color: #ffffff; font-family: Montserrat, Arial,sans-serif; padding-bottom:10px;">
+                                             The Royal Institution,
+21 Albemarle Street,
+London, W1S 4BS<br><br>
+
+Cable Care Limited is a company,
+registered in England and Wales.<br>
+Company Registration No. 12675386<br>
+Phone- +44 7584 213591, Email: <a href="mailto:hello@cablecare.com">hello@cablecare.com</a>
+														</td>
+													</tr> -->
+
+
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- end of image -->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--end_content_section_div-->
+
+</body>
+
+</html>
