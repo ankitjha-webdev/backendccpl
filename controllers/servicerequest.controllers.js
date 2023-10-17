@@ -30,7 +30,7 @@ exports.create = asyncErrorHandler(async (req, res, next) => {
            return res.status(200).json({
                 status: 200,
                 success: true,
-                message: "We've got your request and will get back to you soon. If no response within 24 hours, submit another request."
+                message: "Request received. We'll contact you shortly. Resubmit after 24 hours if no response."
             });
         }
     }
@@ -116,7 +116,7 @@ Team Cable Care
     res.status(201).json({
         status: 201,
         success: true,
-        message: "We've received your request. Our team will contact you soon. If no response within 24 hours, you can submit another request.",
+        message: "Request received. We'll contact you shortly. Resubmit after 24 hours if no response.",
     });
 });
 

@@ -60,7 +60,7 @@ exports.create = asyncErrorHandler(async (req, res, next) => {
         status: 200,
         success: true,
         message:
-          "We've received your request. Our team will contact you promptly. If no response within 24 hours, you can submit another request at your convenience."
+          "Request received. We'll contact you shortly. Resubmit after 24 hours if no response."
       });
     }
   }
