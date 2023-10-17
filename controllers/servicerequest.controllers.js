@@ -30,7 +30,7 @@ exports.create = asyncErrorHandler(async (req, res, next) => {
            return res.status(200).json({
                 status: 200,
                 success: true,
-                message: "Your request has been received, and one of our team members will promptly reach out to you. Should you not receive a response within 24 hours, please feel free to submit another request at your convenience."
+                message: "We've got your request and will get back to you soon. If no response within 24 hours, submit another request."
             });
         }
     }
@@ -116,7 +116,7 @@ Team Cable Care
     res.status(201).json({
         status: 201,
         success: true,
-        message: "Your request has been received, and one of our team members will promptly reach out to you. Should you not receive a response within 24 hours, please feel free to submit another request at your convenience.",
+        message: "We've received your request. Our team will contact you soon. If no response within 24 hours, you can submit another request.",
     });
 });
 

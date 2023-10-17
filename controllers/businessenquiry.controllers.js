@@ -60,7 +60,7 @@ exports.create = asyncErrorHandler(async (req, res, next) => {
         status: 200,
         success: true,
         message:
-          "Your request has been received, and one of our team members will promptly reach out to you. Should you not receive a response within 24 hours, please feel free to submit another request at your convenience."
+          "We've received your request. Our team will contact you promptly. If no response within 24 hours, you can submit another request at your convenience."
       });
     }
   }
