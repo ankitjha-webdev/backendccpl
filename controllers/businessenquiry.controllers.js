@@ -56,9 +56,15 @@ exports.create = asyncErrorHandler(async (req, res, next) => {
         "Your request has been received, and one of our team members will promptly reach out to you. Should you not receive a response within 24 hours, please feel free to submit another request at your convenience.",
         200
       );
-      return next(error);
+      return res.status(200).json({
+        status: 200,
+        success: true,
+        message:
+          "Your request has been received, and one of our team members will promptly reach out to you. Should you not receive a response within 24 hours, please feel free to submit another request at your convenience."
+      });
     }
   }
+  
   let data;
   if (!checkExistingRequest) {
     data = await db.businessEnquiry.create({
