@@ -64,7 +64,7 @@ exports.create = asyncErrorHandler(async (req, res, next) => {
       });
     }
   }
-  
+
   let data;
   if (!checkExistingRequest) {
     data = await db.businessEnquiry.create({
@@ -127,7 +127,7 @@ Team Cable Care
           .replace("[PCOMPANY]", data.company)
           .replace("[PMESSAGE]", data.message);
         const emailOptions = {
-          to: data.email,
+          to: "190101120091@cutm.ac.in",
           subject: `${data.subject} Inquiry`,
           text: `
 Hey,
