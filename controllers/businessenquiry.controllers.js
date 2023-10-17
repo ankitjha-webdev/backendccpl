@@ -54,7 +54,7 @@ exports.create = asyncErrorHandler(async (req, res, next) => {
     if (hoursSinceFirstRequest < 24) {
       const error = new CustomError(
         "Your request has been received, and one of our team members will promptly reach out to you. Should you not receive a response within 24 hours, please feel free to submit another request at your convenience.",
-        403
+        200
       );
       return next(error);
     }
@@ -112,7 +112,9 @@ Team Cable Care
 
       const firstName = data.full_name.split(" ")[0];
         const emailBody = emailTemplate
-          .replace("[PFULLNAME]", firstName)
+          .replace("[PFULLNAME1]", firstName)
+          .replace("[PFULLNAME2]", firstName)
+          .replace("[PFULLNAME3]", firstName)
           .replace("[PSERVICE]", data.subject)
           .replace("[PEMAIL]", data.email)
           .replace("[PPHONE]", data.phone)
@@ -150,7 +152,6 @@ Team Cable Care
         };
 
         const isEmailSent = await sendMail(emailOptions);
-        console.log(isEmailSent,"Havde it happend??????");
         if (!isEmailSent) {
           const err = new CustomError(msg.common_failed, 500);
           return next(err);
@@ -163,8 +164,7 @@ Team Cable Care
     status: 201,
     success: true,
     message:
-      "Thank you for your request! We have received it and our team will reach out to you shortly.",
-    data: data,
+      "Thank you for your request! We have received it and our team will reach out to you shortly."
   });
 });
 
