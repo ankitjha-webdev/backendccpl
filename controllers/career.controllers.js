@@ -23,7 +23,12 @@ exports.create = asyncErrorHandler(async (req, res, next) => {
 
   if (isJobApplied) {
     const error = new CustomError("You have already submitted an application for this role. We kindly request your patience as we will be reaching out to you in the near future. Thank you for your understanding.", 401);
-    return next(error);
+    // return next(error);
+    return  res.status(200).json({
+      status: 200,
+      success: true,
+      message: "You have already submitted an application for this role. We kindly request your patience as we will be reaching out to you in the near future. Thank you for your understanding.",
+    });
   }
   
   const data = await db.career.create({
@@ -105,8 +110,7 @@ Team Cable Care
   res.status(201).json({
     status: 201,
     success: true,
-    message: msg.common_save,
-    data: data,
+    message: "You have already submitted an application for this role. We kindly request your patience as we will be reaching out to you in the near future. Thank you for your understanding.",
   });
 });
 
