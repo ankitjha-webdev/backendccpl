@@ -74,10 +74,10 @@ module.exports = (sequelize, DataTypes) => {
         notNull: {
           msg: "Message is required"
         },
-        len: {
-          args: [1, 500],
-          msg: "Message must be between 1 and 500 characters"
-        }
+        // len: {
+        //   args: [1, 500],
+        //   msg: "Message must be between 1 and 500 characters"
+        // }
       }
     },
   }, {

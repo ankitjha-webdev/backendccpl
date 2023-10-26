@@ -77,10 +77,10 @@ module.exports = (sequelize, DataTypes) => {
         notNull: {
           msg: "Message is required"
         },
-        len: {
-          args: [100],
-          msg: "Message must be at least 100 characters"
-        }
+        // len: {
+        //   args: [100],
+        //   msg: "Message must be at least 100 characters"
+        // }
       }
     },
     ticket_number: {
