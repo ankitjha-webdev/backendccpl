@@ -94,7 +94,7 @@ Hello ${data.full_name},
 
 Thank you for your business inquiry. We appreciate your interest in our products/services. Rest assured, your message has been received and our team is currently reviewing it. We will respond promptly with the information and assistance you need to make an informed decision.
 
-If you have any immediate questions or specific requirements, please feel free to share them with us. We value your interest and look forward to the possibility of collaborating with you. Expect to hear from us soon.
+If you have any immediate questions or specific requirements, please feel free to share them with us at support@cablecare.co. We value your interest and look forward to the possibility of collaborating with you. Expect to hear from us soon.
 
 Thank you,
 Team Cable Care
