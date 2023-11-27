@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "SET NODE_ENV=development&& nodemon server",
-    "startprod": "SET NODE_ENV=production&& nodemon server",
+    "start": "NODE_ENV=development&& node server",
+    "startprod": "NODE_ENV=production node server",
     "serve": "node server"
   },
   "keywords": [],

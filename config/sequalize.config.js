@@ -11,9 +11,9 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   },
   dialectOptions: {
     connectTimeout: 20000, // default is 10s which causes occasional ETIMEDOUT errors (see https://stackoverflow.com/a/52465919/491553)
-    // ssl: {
-    //     rejectUnauthorized: false, // Do not validate SSL certificate
-    // },
+    ssl: {
+        rejectUnauthorized: false, // Do not validate SSL certificate
+    },
   },
   logging: true,
   pool: {
@@ -44,6 +44,6 @@ db.career = require('../models/career.models')(sequelize, DataTypes);
 
 module.exports = db;
 
-db.sequelize.sync({ force: true  }).then(() => {
+db.sequelize.sync({ force: false  }).then(() => {
   console.log("#droped the database and and re-synced.");
 });
