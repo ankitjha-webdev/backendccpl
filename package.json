@@ -1,17 +1,26 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Cable Care Private Limited is a young start-up organization Founded in 2015 by Mr. SK MISHRA Young Professional having over more then 25 years of Industry experience with a mission to offer the most cost-effective structured cabling in general environment for data transmission by integrating telephone networks, video surveillance, security, local computer And other systems together. Our dedication and commitment to excellence have resulted in unwavering confidence from our customers in terms of quality service and technical expertise. Cable Care is firmly committed to provide cabling installations of the highest standard and aim to remain one of the leading key players in the network cabling industries. We will constantly establish a closed working relationship with our customers to understand their needs and requirements. Cable Care views our customers’ problems as our own.",
+  "main": "sever.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=development&& node server",
     "startprod": "NODE_ENV=production node server",
     "serve": "node server"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "structured cabling",
+    "data transmission",
+    "telephone networks",
+    "video surveillance",
+    "security",
+    "computer systems",
+    "network cabling",
+    "cabling installations"
+  ],
+  "author": "Ankit Kumar",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
