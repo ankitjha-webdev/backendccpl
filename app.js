@@ -32,7 +32,7 @@ app.use(
     origin:
       process.env.NODE_ENV === "development"
         ? "http://localhost:3000"
-        : "http://cablecare.co",
+        : "https://cablecare.co",
   })
 );
 
