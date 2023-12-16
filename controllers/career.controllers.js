@@ -6,31 +6,31 @@ const msg = require('../config/responsecatalog.config.json');
 const sendMail = require("../utils/emailHandler");
 const fs = require('fs');
 
-exports.isEmailExists = asyncErrorHandler( async (req, res, next) => {
-    const email = req.body.email;
-    const result = await db.career.findOne({where: {email: email}});
-    console.log(result);
-    next()
+exports.isEmailExists = asyncErrorHandler(async (req, res, next) => {
+  const email = req.body.email;
+  const result = await db.career.findOne({ where: { email: email } });
+  console.log(result);
+  next()
 });
 
 
-exports.create = asyncErrorHandler(async (req, res, next) => {
+exports.applyJob = asyncErrorHandler(async (req, res, next) => {
   const { full_name, email, phone } = req.body;
   const jobTitle = "Project Manager"
   const resume = req.file.filename;
 
-  const isJobApplied = await db.career.findOne({where:{email}});
+  const isJobApplied = await db.career.findOne({ where: { email } });
 
   if (isJobApplied) {
     const error = new CustomError("You have already submitted an application for this role. We kindly request your patience as we will be reaching out to you in the near future. Thank you for your understanding.", 401);
     // return next(error);
-    return  res.status(200).json({
+    return res.status(200).json({
       status: 200,
       success: true,
       message: "Your application is on file. Please await our contact soon. Thank you for understanding.",
     });
   }
-  
+
   const data = await db.career.create({
     full_name,
     email,
@@ -44,19 +44,19 @@ exports.create = asyncErrorHandler(async (req, res, next) => {
   }
   const SENDER_FILE_SERVER_PATH = process.env.FILE_SERVER_PATH + "/applicationsender.html";
   const RECEIVER_FILE_SERVER_PATH = process.env.FILE_SERVER_PATH + "/applicationrecever.html";
-const senderEmailTemplate = await fs.promises.readFile(SENDER_FILE_SERVER_PATH, "utf-8");
-const receiverEmailTemplate = await fs.promises.readFile(RECEIVER_FILE_SERVER_PATH, "utf-8");
-const firstName = data.full_name.split(" ")[0];
-const senderEmailBody = senderEmailTemplate
-  .replace("[XYZ]", firstName);
+  const senderEmailTemplate = await fs.promises.readFile(SENDER_FILE_SERVER_PATH, "utf-8");
+  const receiverEmailTemplate = await fs.promises.readFile(RECEIVER_FILE_SERVER_PATH, "utf-8");
+  const firstName = data.full_name.split(" ")[0];
+  const senderEmailBody = senderEmailTemplate
+    .replace("[XYZ]", firstName);
 
   const receiverEmailBody = receiverEmailTemplate
-  .replace("[JOBTITLE]", jobTitle)
-  .replace("[FULLNAME]", data.full_name)
-  .replace("[EMAIL]", data.email)
-  .replace("[PHONE]", data.phone)
-  .replace("[APPLICATIONDATE]", data.createdAt);
-  
+    .replace("[JOBTITLE]", jobTitle)
+    .replace("[FULLNAME]", data.full_name)
+    .replace("[EMAIL]", data.email)
+    .replace("[PHONE]", data.phone)
+    .replace("[APPLICATIONDATE]", data.createdAt);
+
   const senderResume = await fs.promises.readFile(`${process.env.RESUME_FILE_SERVER_PATH}${data.resume}`);
 
   const attachments = {
@@ -131,3 +131,4 @@ Team Cable Care
 //     data: enquiry,
 //   });
 // });
+

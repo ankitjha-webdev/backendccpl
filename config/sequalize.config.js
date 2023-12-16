@@ -15,7 +15,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
         rejectUnauthorized: false, // Do not validate SSL certificate
     },
   },
-  logging: true,
+  logging: process.env.NODE_ENV === "development" ? true : false,
   pool: {
     max: dbConfig.pool.max,
     min: dbConfig.pool.min,
@@ -41,9 +41,12 @@ db.sequelize = sequelize;
 db.serviceRequest = require('../models/servicerequest.models')(sequelize, DataTypes);
 db.businessEnquiry = require('../models/businessenquiry.models')(sequelize, DataTypes);
 db.career = require('../models/career.models')(sequelize, DataTypes);
+db.users = require('../models/user.models')(sequelize, DataTypes);
+db.jobs = require('../models/job.models')(sequelize, DataTypes);
+db.pageImages = require('../models/pageimages.models')(sequelize, DataTypes);
 
 module.exports = db;
 
 db.sequelize.sync({ force: false  }).then(() => {
-  console.log("#droped the database and and re-synced.");
+  console.log("Dropped the database and re-synced. Oops, did I do that? 😅");
 });

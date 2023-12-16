@@ -4,22 +4,21 @@ const CustomError = require('./CustomError');
 
 let mailConfig;
 if(process.env.NODE_ENV === 'production'){
+        mailConfig = {
+        host: 'smtp.cablecare.co',
+        port: 587,
+        secure: false,
+        auth: {
+            user: "sudhir@cablecare.co", // generated ethereal user
+            pass: "1WQwNx3yyVdBuzWCte"  // generated ethereal password
+        }
+    }
+} else {
     mailConfig = {
         service: 'gmail',
         auth: {
             user: "190101120091@cutm.ac.in", // generated google user
             pass: "kocyflkscjmrctur"  // generated google password
-        }
-
-    }
-} else {
-    mailConfig = {
-        host: 'smtp.ethereal.email',
-        port: 587,
-        secure: false,
-        auth: {
-            user: "eldora.stokes19@ethereal.email", // generated ethereal user
-            pass: "1WQwNx3yyVdBuzWCte"  // generated ethereal password
         }
 
     }
