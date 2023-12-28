@@ -98,7 +98,6 @@ module.exports = (sequelize, DataTypes) => {
     };
   
     Users.prototype.generatePasswordResetToken = function() {
-        console.log("AMI I HERE");
       this.resetPasswordToken = crypto.randomBytes(20).toString('hex');
       this.resetPasswordExpires = Date.now() + 3600000; // 1 hour
       return this.resetPasswordToken;

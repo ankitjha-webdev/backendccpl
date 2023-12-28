@@ -69,7 +69,7 @@ exports.deleteImage = asyncErrorHandler(async (req, res, next) => {
       id: value.id,
     },
   });
-  
+
   if (!image) {
     return next(new CustomError('Image not found', 404));
   }
@@ -85,4 +85,32 @@ exports.deleteImage = asyncErrorHandler(async (req, res, next) => {
     success: true,
     message: "Image deleted successfully",
   });
+});
+
+
+
+// List All Images for Admins
+exports.listImages = asyncErrorHandler(async (req, res, next) => {
+  const images = await db.pageImages.findAll({
+    attributes: ["id", "name", "alt_text", "page_location"],
+  });
+
+  const imagesWithUrl = images.map((image) => {
+    const imageUrl = `${req.protocol}://${req.get('host')}/images/${image.name}`;
+    return {
+      id: image.id,
+      name: image.name,
+      alt_text: image.alt_text,
+      page_location: image.page_location,
+      url: imageUrl
+    };
+  });
+
+  res.status(200).json({
+    status: 200,
+    success: true,
+    message: "Images fetched successfully",
+    data: imagesWithUrl,
+  });
+
 });

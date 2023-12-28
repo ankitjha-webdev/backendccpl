@@ -18,7 +18,7 @@ exports.login = asyncErrorHandler(async (req, res, next) => {
     const user = await db.users.findOne({ where: { email } });
     
     if (!user) {
-        return next(new CustomError('Incorrect Email or Password', 404));
+        return next(new CustomError('Incorrect Email or Password', 400));
     }
     
     const isMatch = await user.validPassword(password);
@@ -67,7 +67,7 @@ exports.forgotPassword = asyncErrorHandler(async (req, res, next) => {
     const user = await db.users.findOne({ where: { email } });
 
     if (!user) {
-        return next(new CustomError('User with this email does not exist', 404));
+        return next(new CustomError('User with this email does not exist', 400));
     }
 
     // Generate and set password reset token
@@ -104,17 +104,16 @@ exports.forgotPassword = asyncErrorHandler(async (req, res, next) => {
         status: 200,
         success: true,
         message: 'Password reset token sent to email',
-        resetToken
+        // resetToken
     });
 });
 
-
 exports.resetPassword = asyncErrorHandler(async (req, res, next) => {
-    const { email, token, newPassword } = req.body;
-    const user = await db.users.findOne({ where: { email } });
+    const { token, newPassword } = req.body;
+    const user = await db.users.findOne({ where: { resetPasswordToken: token } });
 
     if (!user) {
-        return next(new CustomError('User with this email does not exist', 404));
+        return next(new CustomError('Invalid or expired password reset token', 400));
     }
 
     // Verify the reset token
@@ -126,6 +125,8 @@ exports.resetPassword = asyncErrorHandler(async (req, res, next) => {
 
     const salt = await bcrypt.genSalt();
     user.password = await bcrypt.hash(newPassword, salt);
+    user.resetPasswordToken = null;
+    user.resetPasswordExpires = null;
     await user.save();
 
     res.status(200).json({

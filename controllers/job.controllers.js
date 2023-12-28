@@ -87,7 +87,7 @@ exports.deleteJob = asyncErrorHandler(async (req, res, next) => {
 
 // List Jobs
 exports.listJobs = asyncErrorHandler(async (req, res, next) => {
-  const jobs = await db.jobs.findAll();
+  const jobs = await db.jobs.findAll({ order: [['createdAt', 'DESC']] });
 
   if (!jobs || jobs.length === 0) {
     return next(new CustomError('No jobs found', 404));
