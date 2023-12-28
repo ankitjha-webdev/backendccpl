@@ -99,3 +99,14 @@ exports.listJobs = asyncErrorHandler(async (req, res, next) => {
     data: jobs
   });
 });
+
+// Total Job Posted
+exports.totalJobs = asyncErrorHandler(async (req, res, next) => {
+  const totalJob = await db.jobs.count();
+  res.status(200).json({
+    status: 1,
+    success: true,
+    message: "Total job fetched successfully",
+    data: totalJob,
+  });
+});

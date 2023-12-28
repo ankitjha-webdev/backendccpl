@@ -10,11 +10,13 @@ require("../config/passport.config")(passport);
 router
   .route('/')
   .get(job.listJobs)
-  .post(passport.authenticate('jwt', {session:false}), job.createJob);
+  .post(passport.authenticate('jwt', { session: false }), job.createJob);
+
+router.get('/totaljobs', passport.authenticate('jwt', { session: false }), job.totalJobs)
 
 router
   .route('/:id')
-  .put(passport.authenticate('jwt', {session:false}), job.updateJob)
-  .delete(passport.authenticate('jwt', {session:false}), job.deleteJob);
-  
+  .put(passport.authenticate('jwt', { session: false }), job.updateJob)
+  .delete(passport.authenticate('jwt', { session: false }), job.deleteJob);
+
 module.exports = router;

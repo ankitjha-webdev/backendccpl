@@ -114,3 +114,14 @@ exports.listImages = asyncErrorHandler(async (req, res, next) => {
   });
 
 });
+
+// Total Images
+exports.totalImages = asyncErrorHandler(async (req, res, next) => {
+  const totalImage = await db.pageImages.count();
+  res.status(200).json({
+    status: 1,
+    success: true,
+    message: "Total images fetched successfully",
+    data: totalImage,
+  });
+});

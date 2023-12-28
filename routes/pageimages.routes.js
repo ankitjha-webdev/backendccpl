@@ -9,6 +9,7 @@ router
   .get(pageImages.listAllImages)
   .post(passport.authenticate('jwt', { session: false }), upload("images", "image"), pageImages.uploadImage);
 router.get("/listimages", pageImages.listImages);
+router.get('/totalimages', passport.authenticate('jwt', { session: false }), pageImages.totalImages);
 router.route("/:id")
   .delete(passport.authenticate('jwt', { session: false }), pageImages.deleteImage);
 
